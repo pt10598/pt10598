@@ -3,7 +3,6 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 app = Flask(__name__)
-iden=input('輸入車號：')
 chrome_options=Options()
 chrome_options.add_argument("--headless")
 driver=webdriver.Chrome(options=chrome_options)
@@ -11,7 +10,7 @@ driver.get("https:pay.taipei/v2/CheckBill/Index/2")
 
 time.sleep(0.5)
 serc2 = driver.find_element("name", "parameter2")
-serc2.send_keys(iden)
+serc2.send_keys("AKL-9969")
 time.sleep(0.5)
 serc3=driver.find_element("xpath", '/html/body/article/main/form/div[3]/button')
 serc3.click()
